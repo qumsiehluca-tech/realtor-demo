@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarah Mitchell | Tallahassee Real Estate</title>
+<title>Jane Smith | Tallahassee Real Estate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
     --cream: #FAF7F2;
     --warm-white: #FFFDF9;
@@ -21,17 +20,13 @@
     --text: #3D3020;
     --text-light: #7A6A55;
   }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--text);
     overflow-x: hidden;
   }
-
-  /* ── NOISE TEXTURE OVERLAY ── */
   body::before {
     content: '';
     position: fixed;
@@ -41,8 +36,6 @@
     z-index: 1000;
     opacity: 0.4;
   }
-
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -56,7 +49,6 @@
     border-bottom: 1px solid rgba(201, 185, 154, 0.3);
     transition: all 0.3s ease;
   }
-
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
@@ -64,17 +56,8 @@
     color: var(--dark);
     letter-spacing: 0.02em;
   }
-
-  .nav-logo span {
-    color: var(--accent);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-  }
-
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
     font-size: 13px;
     font-weight: 400;
@@ -84,9 +67,7 @@
     text-decoration: none;
     transition: color 0.2s;
   }
-
   .nav-links a:hover { color: var(--accent); }
-
   .nav-cta {
     background: var(--accent);
     color: white !important;
@@ -95,8 +76,7 @@
     letter-spacing: 0.1em !important;
     transition: background 0.2s !important;
   }
-
-  .nav-cta:hover { background: var(--brown) !important; color: white !important; }
+  .nav-cta:hover { background: var(--brown) !important; }
 
   /* ── HERO ── */
   .hero {
@@ -104,20 +84,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 80px;
-    position: relative;
-    overflow: hidden;
+    /* no overflow:hidden here so badge isn't clipped */
   }
-
   .hero-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 80px 64px 80px 80px;
-    position: relative;
-    z-index: 2;
     animation: fadeUp 0.9s ease both;
   }
-
   .hero-eyebrow {
     font-size: 11px;
     letter-spacing: 0.2em;
@@ -129,7 +104,6 @@
     align-items: center;
     gap: 12px;
   }
-
   .hero-eyebrow::before {
     content: '';
     display: block;
@@ -137,7 +111,6 @@
     height: 1px;
     background: var(--accent);
   }
-
   h1 {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(42px, 5vw, 72px);
@@ -147,12 +120,7 @@
     margin-bottom: 28px;
     letter-spacing: -0.01em;
   }
-
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
+  h1 em { font-style: italic; color: var(--accent); }
   .hero-sub {
     font-size: 16px;
     line-height: 1.7;
@@ -161,19 +129,8 @@
     max-width: 420px;
     margin-bottom: 44px;
   }
-
-  .hero-stats {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 48px;
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
+  .hero-stats { display: flex; gap: 40px; margin-bottom: 48px; }
+  .stat { display: flex; flex-direction: column; gap: 4px; }
   .stat-num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 36px;
@@ -181,7 +138,6 @@
     color: var(--dark);
     line-height: 1;
   }
-
   .stat-label {
     font-size: 11px;
     text-transform: uppercase;
@@ -189,7 +145,6 @@
     color: var(--text-light);
     font-weight: 400;
   }
-
   .hero-btn {
     display: inline-flex;
     align-items: center;
@@ -206,58 +161,29 @@
     transition: all 0.25s ease;
     align-self: flex-start;
   }
-
-  .hero-btn:hover {
-    background: var(--accent);
-    gap: 18px;
-  }
-
-  .hero-btn svg {
-    transition: transform 0.25s;
-  }
-
+  .hero-btn:hover { background: var(--accent); gap: 18px; }
+  .hero-btn svg { transition: transform 0.25s; }
   .hero-btn:hover svg { transform: translateX(4px); }
 
-  /* ── HERO RIGHT (photo area) ── */
   .hero-right {
-    position: relative;
-    overflow: hidden;
-    animation: fadeIn 1.2s ease both 0.3s;
-  }
-
-  .hero-img-wrap {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--sand) 0%, var(--tan) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 60px 40px;
+    animation: fadeIn 1.2s ease both 0.3s;
+    background: linear-gradient(135deg, var(--sand) 0%, var(--tan) 100%);
   }
-
-  /* Decorative geometric */
-  .hero-img-wrap::before {
-    content: '';
-    position: absolute;
-    width: 340px;
-    height: 420px;
-    border: 1px solid rgba(139, 111, 71, 0.25);
-    transform: rotate(3deg);
-    border-radius: 2px;
+  .hero-img-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 320px;
   }
-
-  .hero-img-wrap::after {
-    content: '';
-    position: absolute;
-    width: 340px;
-    height: 420px;
-    border: 1px solid rgba(139, 111, 71, 0.15);
-    transform: rotate(-2deg);
-    border-radius: 2px;
-  }
-
   .realtor-photo-placeholder {
-    width: 300px;
-    height: 380px;
+    width: 100%;
+    height: 340px;
     background: linear-gradient(160deg, rgba(255,255,255,0.2) 0%, rgba(139,111,71,0.3) 100%);
     border-radius: 2px;
     display: flex;
@@ -265,12 +191,9 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    position: relative;
-    z-index: 2;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255,255,255,0.3);
   }
-
   .photo-icon {
     width: 80px;
     height: 80px;
@@ -280,7 +203,6 @@
     align-items: center;
     justify-content: center;
   }
-
   .photo-label {
     font-size: 12px;
     color: rgba(44,36,22,0.6);
@@ -288,48 +210,36 @@
     text-transform: uppercase;
     font-weight: 500;
   }
-
-  .hero-badge {
-    position: absolute;
-    bottom: 48px;
-    left: -24px;
+  .response-badge {
     background: var(--warm-white);
     border: 1px solid var(--sand);
-    padding: 16px 20px;
+    padding: 18px 28px;
     border-radius: 4px;
-    box-shadow: 0 8px 32px rgba(44,36,22,0.12);
-    z-index: 3;
-    animation: slideIn 1s ease both 0.8s;
+    box-shadow: 0 6px 24px rgba(44,36,22,0.12);
+    text-align: center;
+    width: 100%;
   }
-
   .badge-top {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--text-light);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
-
   .badge-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 600;
     color: var(--accent);
     line-height: 1;
   }
-
   .badge-sub {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-light);
-    margin-top: 2px;
+    margin-top: 4px;
   }
 
-  /* ── SECTION SHARED ── */
-  section {
-    padding: 100px 80px;
-    position: relative;
-  }
-
+  section { padding: 100px 80px; position: relative; }
   .section-tag {
     font-size: 11px;
     text-transform: uppercase;
@@ -341,16 +251,8 @@
     gap: 12px;
     margin-bottom: 20px;
   }
+  .section-tag::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
 
-  .section-tag::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--accent);
-  }
-
-  /* ── ABOUT STRIP ── */
   .about-strip {
     background: var(--dark);
     padding: 64px 80px;
@@ -359,10 +261,8 @@
     gap: 80px;
     align-items: center;
   }
-
   .about-strip .section-tag { color: var(--tan); }
   .about-strip .section-tag::before { background: var(--tan); }
-
   .about-strip h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 42px;
@@ -370,57 +270,14 @@
     color: var(--cream);
     line-height: 1.2;
   }
+  .about-strip h2 em { color: var(--accent-light); font-style: italic; }
+  .about-text { font-size: 15px; line-height: 1.8; color: var(--tan); font-weight: 300; }
+  .trust-items { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  .trust-item { display: flex; align-items: flex-start; gap: 12px; }
+  .trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-light); margin-top: 7px; flex-shrink: 0; }
+  .trust-item p { font-size: 13px; color: rgba(232,223,208,0.75); line-height: 1.5; font-weight: 300; }
 
-  .about-strip h2 em {
-    color: var(--accent-light);
-    font-style: italic;
-  }
-
-  .about-text {
-    font-size: 15px;
-    line-height: 1.8;
-    color: var(--tan);
-    font-weight: 300;
-  }
-
-  .trust-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 32px;
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .trust-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-light);
-    margin-top: 7px;
-    flex-shrink: 0;
-  }
-
-  .trust-item p {
-    font-size: 13px;
-    color: rgba(232, 223, 208, 0.75);
-    line-height: 1.5;
-    font-weight: 300;
-  }
-
-  /* ── FORM SECTION ── */
-  .form-section {
-    background: var(--warm-white);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 0;
-  }
-
+  .form-section { background: var(--warm-white); display: grid; grid-template-columns: 1fr 1fr; padding: 0; }
   .form-left {
     background: linear-gradient(160deg, var(--sand) 0%, var(--tan) 100%);
     padding: 80px 64px;
@@ -430,120 +287,20 @@
     position: relative;
     overflow: hidden;
   }
-
-  .form-left::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    border: 1px solid rgba(139,111,71,0.2);
-  }
-
-  .form-left::after {
-    content: '';
-    position: absolute;
-    bottom: -60px;
-    left: -60px;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 1px solid rgba(139,111,71,0.15);
-  }
-
-  .form-left h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--dark);
-    line-height: 1.1;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .form-left h2 em {
-    font-style: italic;
-    color: var(--brown);
-  }
-
-  .form-left p {
-    font-size: 15px;
-    color: var(--text);
-    line-height: 1.7;
-    font-weight: 300;
-    max-width: 360px;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 40px;
-  }
-
-  .form-promise {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .promise-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    color: var(--text);
-    font-weight: 400;
-  }
-
-  .promise-check {
-    width: 22px;
-    height: 22px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
+  .form-left::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; border: 1px solid rgba(139,111,71,0.2); }
+  .form-left::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 250px; height: 250px; border-radius: 50%; border: 1px solid rgba(139,111,71,0.15); }
+  .form-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--dark); line-height: 1.1; margin-bottom: 20px; position: relative; z-index: 1; }
+  .form-left h2 em { font-style: italic; color: var(--brown); }
+  .form-left p { font-size: 15px; color: var(--text); line-height: 1.7; font-weight: 300; max-width: 360px; position: relative; z-index: 1; margin-bottom: 40px; }
+  .form-promise { display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
+  .promise-item { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--text); font-weight: 400; }
+  .promise-check { width: 22px; height: 22px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
   .promise-check svg { width: 10px; height: 10px; }
-
-  .form-right {
-    padding: 80px 64px;
-    background: var(--warm-white);
-  }
-
-  .form-right h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 30px;
-    font-weight: 400;
-    color: var(--dark);
-    margin-bottom: 8px;
-  }
-
-  .form-right .form-sub {
-    font-size: 14px;
-    color: var(--text-light);
-    margin-bottom: 36px;
-    font-weight: 300;
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  label {
-    display: block;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-light);
-    font-weight: 500;
-    margin-bottom: 8px;
-  }
-
+  .form-right { padding: 80px 64px; background: var(--warm-white); }
+  .form-right h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--dark); margin-bottom: 8px; }
+  .form-right .form-sub { font-size: 14px; color: var(--text-light); margin-bottom: 36px; font-weight: 300; }
+  .form-group { margin-bottom: 20px; }
+  label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-light); font-weight: 500; margin-bottom: 8px; }
   input, select {
     width: 100%;
     padding: 14px 16px;
@@ -557,322 +314,60 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     appearance: none;
   }
-
-  input:focus, select:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(193, 123, 63, 0.1);
-  }
-
+  input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(193,123,63,0.1); }
   input::placeholder { color: var(--tan); }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .radio-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .radio-option {
-    position: relative;
-  }
-
-  .radio-option input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-  }
-
-  .radio-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    background: var(--cream);
-    border: 1px solid var(--sand);
-    border-radius: 2px;
-    cursor: pointer;
-    font-size: 13px;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 500;
-    transition: all 0.2s;
-  }
-
-  .radio-option input[type="radio"]:checked + .radio-label {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: white;
-  }
-
-  .radio-label:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 16px;
-    background: var(--dark);
-    color: var(--cream);
-    border: none;
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.25s;
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .radio-option { position: relative; }
+  .radio-option input[type="radio"] { position: absolute; opacity: 0; width: 0; }
+  .radio-label { display: flex; align-items: center; justify-content: center; padding: 12px; background: var(--cream); border: 1px solid var(--sand); border-radius: 2px; cursor: pointer; font-size: 13px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; transition: all 0.2s; }
+  .radio-option input[type="radio"]:checked + .radio-label { background: var(--accent); border-color: var(--accent); color: white; }
+  .radio-label:hover { border-color: var(--accent); color: var(--accent); }
+  .submit-btn { width: 100%; padding: 16px; background: var(--dark); color: var(--cream); border: none; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; cursor: pointer; transition: all 0.25s; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 10px; }
   .submit-btn:hover { background: var(--accent); }
-
   .submit-btn svg { transition: transform 0.25s; }
   .submit-btn:hover svg { transform: translateX(4px); }
+  .form-footer-note { font-size: 11px; color: var(--tan); text-align: center; margin-top: 14px; font-weight: 300; }
+  .success-state { display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; height: 100%; }
+  .success-icon { width: 64px; height: 64px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; animation: popIn 0.4s ease; }
+  .success-state h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--dark); margin-bottom: 12px; font-weight: 400; }
+  .success-state p { font-size: 15px; color: var(--text-light); line-height: 1.6; font-weight: 300; }
 
-  .form-footer-note {
-    font-size: 11px;
-    color: var(--tan);
-    text-align: center;
-    margin-top: 14px;
-    font-weight: 300;
-  }
+  .testimonials { background: var(--cream); padding: 100px 80px; }
+  .testimonials-header { text-align: center; margin-bottom: 60px; }
+  .testimonials-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--dark); line-height: 1.2; }
+  .testimonials-header h2 em { font-style: italic; color: var(--accent); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+  .testimonial-card { background: var(--warm-white); border: 1px solid var(--sand); padding: 32px; border-radius: 2px; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+  .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(44,36,22,0.08); }
+  .quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 72px; line-height: 0.5; color: var(--sand); margin-bottom: 20px; display: block; }
+  .testimonial-text { font-size: 15px; line-height: 1.7; color: var(--text); font-weight: 300; font-style: italic; margin-bottom: 24px; flex: 1; }
+  .testimonial-author { margin-top: auto; display: flex; align-items: center; gap: 12px; }
+  .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--sand); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--brown); font-weight: 600; flex-shrink: 0; }
+  .author-info .name { font-size: 13px; font-weight: 500; color: var(--dark); }
+  .author-info .role { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.08em; }
+  .stars { color: var(--accent); font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; }
 
-  /* ── SUCCESS STATE ── */
-  .success-state {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px;
-    height: 100%;
-  }
-
-  .success-icon {
-    width: 64px;
-    height: 64px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    animation: popIn 0.4s ease;
-  }
-
-  .success-state h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    color: var(--dark);
-    margin-bottom: 12px;
-    font-weight: 400;
-  }
-
-  .success-state p {
-    font-size: 15px;
-    color: var(--text-light);
-    line-height: 1.6;
-    font-weight: 300;
-  }
-
-  /* ── TESTIMONIALS ── */
-  .testimonials {
-    background: var(--cream);
-    padding: 100px 80px;
-  }
-
-  .testimonials-header {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .testimonials-header h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--dark);
-    line-height: 1.2;
-  }
-
-  .testimonials-header h2 em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .testimonial-card {
-    background: var(--warm-white);
-    border: 1px solid var(--sand);
-    padding: 32px;
-    border-radius: 2px;
-    position: relative;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .testimonial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(44,36,22,0.08);
-  }
-
-  .quote-mark {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 72px;
-    line-height: 0.5;
-    color: var(--sand);
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .testimonial-text {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--text);
-    font-weight: 300;
-    font-style: italic;
-    margin-bottom: 24px;
-  }
-
-  .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .author-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--sand);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
-    color: var(--brown);
-    font-weight: 600;
-  }
-
-  .author-info .name {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--dark);
-  }
-
-  .author-info .role {
-    font-size: 11px;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .stars {
-    color: var(--accent);
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark);
-    padding: 48px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(201, 185, 154, 0.1);
-  }
-
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--cream);
-  }
-
+  footer { background: var(--dark); padding: 48px 80px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,185,154,0.1); }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--cream); }
   .footer-logo span { color: var(--accent-light); }
-
-  .footer-info {
-    text-align: center;
-    font-size: 12px;
-    color: rgba(201, 185, 154, 0.5);
-    line-height: 1.8;
-    font-weight: 300;
-  }
-
-  .footer-contact {
-    text-align: right;
-  }
-
-  .footer-contact a {
-    display: block;
-    font-size: 13px;
-    color: var(--tan);
-    text-decoration: none;
-    font-weight: 300;
-    transition: color 0.2s;
-    line-height: 1.8;
-  }
-
+  .footer-info { text-align: center; font-size: 12px; color: rgba(201,185,154,0.5); line-height: 1.8; font-weight: 300; }
+  .footer-contact { text-align: right; }
+  .footer-contact a { display: block; font-size: 13px; color: var(--tan); text-decoration: none; font-weight: 300; transition: color 0.2s; line-height: 1.8; }
   .footer-contact a:hover { color: var(--accent-light); }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 70% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-
-  @keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    70% { transform: scale(1.1); }
-    100% { transform: scale(1); opacity: 1; }
-  }
-
-  /* ── SCROLL REVEAL ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── MOBILE ── */
   @media (max-width: 900px) {
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     .hero { grid-template-columns: 1fr; }
     .hero-right { display: none; }
-    .hero-left { padding: 60px 24px 60px; }
+    .hero-left { padding: 60px 24px; }
     section { padding: 60px 24px; }
     .about-strip { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
     .form-section { grid-template-columns: 1fr; }
@@ -888,10 +383,8 @@
 </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">Sarah Mitchell<span>.</span></div>
+  <div class="nav-logo">Jane Smith<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#listings">Listings</a></li>
@@ -900,25 +393,15 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-eyebrow">Tallahassee Real Estate</div>
     <h1>Find Your <em>Perfect</em><br>Home in Tally</h1>
     <p class="hero-sub">Whether you're buying your first home or selling to move on, I'll guide you through every step — with local expertise and zero guesswork.</p>
     <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">14</span>
-        <span class="stat-label">Years Active</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">200+</span>
-        <span class="stat-label">Families Helped</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">$98M</span>
-        <span class="stat-label">In Sales</span>
-      </div>
+      <div class="stat"><span class="stat-num">14</span><span class="stat-label">Years Active</span></div>
+      <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Families Helped</span></div>
+      <div class="stat"><span class="stat-num">$98M</span><span class="stat-label">In Sales</span></div>
     </div>
     <a href="#form" class="hero-btn">
       Start Here
@@ -926,26 +409,25 @@
     </a>
   </div>
   <div class="hero-right">
-    <div class="hero-img-wrap">
+    <div class="hero-img-inner">
       <div class="realtor-photo-placeholder">
         <div class="photo-icon">
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(44,36,22,0.5)" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         </div>
         <span class="photo-label">Realtor Photo</span>
       </div>
-      <div class="hero-badge">
+      <div class="response-badge">
         <div class="badge-top">Avg. Response</div>
-        <div class="badge-num">< 1hr</div>
+        <div class="badge-num">&lt; 1hr</div>
         <div class="badge-sub">Guaranteed reply</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT STRIP -->
 <div class="about-strip" id="about">
   <div>
-    <div class="section-tag">About Sarah</div>
+    <div class="section-tag">About Jane</div>
     <h2>Local Knowledge,<br><em>Real Results</em></h2>
   </div>
   <div>
@@ -959,7 +441,6 @@
   </div>
 </div>
 
-<!-- FORM SECTION -->
 <div class="form-section" id="form">
   <div class="form-left">
     <div class="section-tag" style="color: var(--brown);">
@@ -970,31 +451,23 @@
     <p>Fill out the quick form and I'll reach out within the hour. No obligations, no spam — just a real conversation about your goals.</p>
     <div class="form-promise">
       <div class="promise-item">
-        <div class="promise-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-        </div>
+        <div class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
         Response within 60 minutes
       </div>
       <div class="promise-item">
-        <div class="promise-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-        </div>
+        <div class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
         Free consultation, no commitment
       </div>
       <div class="promise-item">
-        <div class="promise-check">
-          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
-        </div>
+        <div class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
         Your info stays private
       </div>
     </div>
   </div>
-
   <div class="form-right">
     <div id="formContainer">
       <h3>Tell Me About Your Goals</h3>
       <p class="form-sub">Takes less than 90 seconds to fill out.</p>
-
       <div class="form-group">
         <label>Are you looking to</label>
         <div class="radio-group">
@@ -1008,7 +481,6 @@
           </div>
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
@@ -1019,17 +491,14 @@
           <input type="text" id="lname" placeholder="Johnson">
         </div>
       </div>
-
       <div class="form-group">
         <label for="email">Email Address</label>
         <input type="email" id="email" placeholder="sarah@email.com">
       </div>
-
       <div class="form-group">
         <label for="phone">Phone Number</label>
         <input type="tel" id="phone" placeholder="(850) 555-0123">
       </div>
-
       <div class="form-group">
         <label for="timeline">Your Timeline</label>
         <select id="timeline">
@@ -1040,14 +509,12 @@
           <option>Just exploring for now</option>
         </select>
       </div>
-
       <button class="submit-btn" onclick="handleSubmit()">
         Get In Touch
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
-      <p class="form-footer-note">🔒 Your information is never sold or shared.</p>
+      <p class="form-footer-note">Your information is never sold or shared.</p>
     </div>
-
     <div class="success-state" id="successState">
       <div class="success-icon">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
@@ -1058,7 +525,6 @@
   </div>
 </div>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div class="testimonials-header reveal">
     <div class="section-tag" style="justify-content: center; margin-bottom: 12px;">
@@ -1068,38 +534,38 @@
     <h2>What My Clients <em>Say</em></h2>
   </div>
   <div class="testimonials-grid">
-    <div class="testimonial-card reveal">
+    <div class="testimonial-card">
       <div class="stars">★★★★★</div>
       <span class="quote-mark">"</span>
-      <p class="testimonial-text">Sarah found us our dream home in Myers Park in under 3 weeks. She knew exactly what we were looking for before we even did. Couldn't recommend her more.</p>
+      <p class="testimonial-text">Jane found us our dream home in Myers Park in under 3 weeks. She knew exactly what we were looking for before we even did. Couldn't recommend her more.</p>
       <div class="testimonial-author">
-        <div class="author-avatar">MR</div>
+        <div class="author-avatar">JS</div>
         <div class="author-info">
-          <div class="name">Marcus & Rachel T.</div>
+          <div class="name">Jane Smith</div>
           <div class="role">Bought in Myers Park</div>
         </div>
       </div>
     </div>
-    <div class="testimonial-card reveal" style="transition-delay: 0.1s;">
+    <div class="testimonial-card">
       <div class="stars">★★★★★</div>
       <span class="quote-mark">"</span>
-      <p class="testimonial-text">We sold our home $18k over asking price. Sarah priced it perfectly and had 6 offers within the first weekend. Absolute professional.</p>
+      <p class="testimonial-text">We sold our home $18k over asking price. Jane priced it perfectly and had 6 offers within the first weekend. Absolute professional.</p>
       <div class="testimonial-author">
-        <div class="author-avatar">DL</div>
+        <div class="author-avatar">JS</div>
         <div class="author-info">
-          <div class="name">Diane L.</div>
+          <div class="name">Jane Smith</div>
           <div class="role">Sold in Midtown</div>
         </div>
       </div>
     </div>
-    <div class="testimonial-card reveal" style="transition-delay: 0.2s;">
+    <div class="testimonial-card">
       <div class="stars">★★★★★</div>
       <span class="quote-mark">"</span>
-      <p class="testimonial-text">As a first-time buyer I was terrified. Sarah walked me through every single step, was always available, and got me into a home I actually love.</p>
+      <p class="testimonial-text">As a first-time buyer I was terrified. Jane walked me through every single step, was always available, and got me into a home I actually love.</p>
       <div class="testimonial-author">
-        <div class="author-avatar">JK</div>
+        <div class="author-avatar">JS</div>
         <div class="author-info">
-          <div class="name">Jordan K.</div>
+          <div class="name">Jane Smith</div>
           <div class="role">First-Time Buyer</div>
         </div>
       </div>
@@ -1107,67 +573,48 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Sarah Mitchell<span>.</span></div>
+  <div class="footer-logo">Jane Smith<span>.</span></div>
   <div class="footer-info">
     Licensed Realtor · Leon County · License #FL-2847301<br>
-    © 2025 Sarah Mitchell Real Estate. All rights reserved.
+    © 2025 Jane Smith Real Estate. All rights reserved.
   </div>
   <div class="footer-contact">
     <a href="tel:8505550192">(850) 555-0192</a>
-    <a href="mailto:sarah@sarahmitchellhomes.com">sarah@sarahmitchellhomes.com</a>
-    <a href="#">sarahmitchellhomes.com</a>
+    <a href="mailto:jane@janesmithhomes.com">jane@janesmithhomes.com</a>
+    <a href="#">janesmithhomes.com</a>
   </div>
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  reveals.forEach(r => observer.observe(r));
-
-  // Nav scroll effect
-  window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    nav.style.boxShadow = window.scrollY > 20
-      ? '0 4px 24px rgba(44,36,22,0.08)'
-      : 'none';
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
   });
+}, { threshold: 0.15 });
+reveals.forEach(r => observer.observe(r));
 
-  // Form submit
-  function handleSubmit() {
-    const fname = document.getElementById('fname').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const intent = document.querySelector('input[name="intent"]:checked');
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 4px 24px rgba(44,36,22,0.08)' : 'none';
+});
 
-    if (!fname || !email || !phone || !intent) {
-      // Simple shake animation on empty fields
-      const btn = document.querySelector('.submit-btn');
-      btn.style.background = '#c0392b';
-      btn.textContent = 'Please fill out all fields';
-      setTimeout(() => {
-        btn.style.background = '';
-        btn.innerHTML = `Get In Touch <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>`;
-      }, 2000);
-      return;
-    }
-
-    // In production: POST to your Make.com webhook here
-    // fetch('YOUR_MAKE_WEBHOOK_URL', { method: 'POST', body: JSON.stringify({...}) })
-
-    document.getElementById('formContainer').style.display = 'none';
-    const success = document.getElementById('successState');
-    success.style.display = 'flex';
+function handleSubmit() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const intent = document.querySelector('input[name="intent"]:checked');
+  if (!fname || !email || !phone || !intent) {
+    const btn = document.querySelector('.submit-btn');
+    const originalHTML = btn.innerHTML;
+    btn.style.background = '#c0392b';
+    btn.textContent = 'Please complete all fields';
+    setTimeout(() => { btn.style.background = ''; btn.innerHTML = originalHTML; }, 2200);
+    return;
   }
+  document.getElementById('formContainer').style.display = 'none';
+  document.getElementById('successState').style.display = 'flex';
+}
 </script>
 </body>
 </html>
